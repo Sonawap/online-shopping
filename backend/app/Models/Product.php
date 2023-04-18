@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    public function getAvatarAttribute($avatar){
+        return $avatar ? asset("/storage/products/".$avatar) : null;
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }
