@@ -19,11 +19,10 @@ CategoryRequest.getAllCategories = (params) => {
   });
 };
 
-CategoryRequest.getACategory = (params) => {
+CategoryRequest.getACategory = (id) => {
   return fetch({
-    url: category,
-    method: "get",
-    params: params
+    url: `${category}/${id}`,
+    method: "get"  
   });
 };
 
