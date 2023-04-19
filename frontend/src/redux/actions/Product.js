@@ -1,4 +1,4 @@
-import { SAVE_PRODUCTS, SAVE_PRODUCT } from "store/contants/Product";
+import { SAVE_PRODUCTS, SAVE_PRODUCT } from "redux/constants/Product";
 
 export const setProducts = (payload) => {
   return {

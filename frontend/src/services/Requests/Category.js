@@ -1,9 +1,9 @@
-import fetch from "auth/FetchInterceptor";
+import fetch from "axiosConfig/FetchInterceptor";
 
 const CategoryRequest = {};
 const category = 'categories';
 
-CategoryRequest.addAProduct = (data) => {
+CategoryRequest.addACategory = (data) => {
   return fetch({
     url: category,
     method: "post",
@@ -11,7 +11,7 @@ CategoryRequest.addAProduct = (data) => {
   });
 };
 
-CategoryRequest.getAllProducts = (params) => {
+CategoryRequest.getAllCategories = (params) => {
   return fetch({
     url: category,
     method: "get",
@@ -19,7 +19,7 @@ CategoryRequest.getAllProducts = (params) => {
   });
 };
 
-CategoryRequest.getAProduct = (params) => {
+CategoryRequest.getACategory = (params) => {
   return fetch({
     url: category,
     method: "get",
@@ -27,7 +27,7 @@ CategoryRequest.getAProduct = (params) => {
   });
 };
 
-CategoryRequest.updateAProduct = (params) => {
+CategoryRequest.updateACategory = (params) => {
   return fetch({
     url: category,
     method: "put",
@@ -35,7 +35,7 @@ CategoryRequest.updateAProduct = (params) => {
   });
 };
 
-CategoryRequest.deleteAProduct = (params) => {
+CategoryRequest.deleteACategory = (params) => {
   return fetch({
     url: category,
     method: "delete",

@@ -1,11 +1,11 @@
-import { SAVE_PRODUCTS, SAVE_PRODUCT } from "../constants/Product";
+import { SAVE_PRODUCTS, SAVE_PRODUCT } from "redux/constants/Product";
 
 const initState = {
   products: [],
   currentProduct: null,
 };
 
-const Step = (state = initState, action) => {
+const Product = (state = initState, action) => {
   switch (action.type) {
     case SAVE_PRODUCTS:
       return {
@@ -24,4 +24,4 @@ const Step = (state = initState, action) => {
   }
 };
 
-export default Step;
+export default Product;

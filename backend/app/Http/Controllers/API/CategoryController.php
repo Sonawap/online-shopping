@@ -10,19 +10,13 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $limit = request()->query('limit', 5); 
-        $categories = Category::with(['products' => function($query) use ($limit){
-            $query->limit($limit);
-        }])->get();
+        $categories = Category::with('products')->get();
         return response()->json($categories);
     }
 
     public function show($id)
     {
-        $limit = request()->query('limit', 5); 
-        $category = Category::with(['products' => function($query) use ($limit){
-            $query->limit($limit);
-        }])->find($id);
+        $category = Category::with('products')->find($id);
         if (!$category) {
             return response()->json(['error' => 'Category not found'], 404);
         }

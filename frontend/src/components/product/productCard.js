@@ -1,20 +1,37 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { CategoryDefaultProps } from 'data/CategoryDefaultProps';
+import { Link } from 'react-router-dom';
 
-const ProductCard = () => {
+const ProductCard = props => {
+  const { product } = props;
   return (
     <div className="card mb-3 shadow-sm">
       <img src="https://via.placeholder.com/300x200" className="card-img-top" alt="..." />
       <div className="card-body">
-        <h5 className="card-title">Product Name</h5>
-        <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae lorem euismod, bibendum orci nec, suscipit eros.</p>
-        <p className="card-text"><strong>Price: $99.99</strong></p>
+        <h5 className="card-title">{product?.name}</h5>
+        <p className="card-text">{product?.description}</p>
+        <p className="card-text"><strong>Price: ${product?.price}</strong></p>
         <div className="d-grid gap-2">
           <button className="btn btn-primary">Add to Cart</button>
-          <button className="btn btn-secondary">View Details</button>
+          <Link 
+            className="btn btn-secondary"
+            to={`product/${product?.id}`}
+            >
+              View Details
+          </Link>
         </div>
       </div>
     </div>
   );
+}
+
+ProductCard.propTypes = {
+  product : PropTypes.object
+}
+
+ProductCard.defaultProps = {
+  product : CategoryDefaultProps?.products?.[0]
 }
 
 export default ProductCard;

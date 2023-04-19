@@ -1,4 +1,4 @@
-import fetch from "auth/FetchInterceptor";
+import fetch from "axiosConfig/FetchInterceptor";
 
 const ProductRequest = {};
 const product = 'products';
