@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Landing from './Landing';
 import NotFound from './Error/404';
 import Header from 'components/shared/header';
+import Chat from './Cart';
 
 const Views = () => {
   return (
@@ -13,6 +14,10 @@ const Views = () => {
           <Route
             path="/"
             element={<Landing title="Landing Page"/>}
+          />
+          <Route
+            path="/chat"
+            element={<Chat title="Your Cart"/>}
           />
           <Route 
             path="*" 

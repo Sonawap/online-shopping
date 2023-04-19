@@ -23,7 +23,9 @@ const Landing = props => {
   }
 
   useEffect(() => {
-    getCategories();
+    if(categories?.length < 1){
+      getCategories();
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
