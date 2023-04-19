@@ -6,23 +6,25 @@ import { Link } from 'react-router-dom';
 
 const CategoryCard = props => {
 
-  const { category } = props;
-  const { products } = category;
+  const { category, showMore } = props;
 
   return (
     <div className="category my-4">
       <div className='d-flex justify-content-between align-items-center'>
         <h4>{ category?.name }</h4>
-        <Link
-          to={`category/${category?.id}`}
-          >
-            More
-        </Link>
+        {
+          showMore &&
+          <Link
+            to={`category/${category?.id}`}
+            >
+              More
+          </Link>
+        }
       </div>
       <div className="row">
         {
-          products?.length > 0 
-          ? products?.map(product => (
+          category?.products?.length > 0 
+          ? category?.products?.map(product => (
             <div className="col-md-3" key={product?.id}>
               <ProductCard product={product}/>
             </div>
@@ -35,11 +37,13 @@ const CategoryCard = props => {
 }
 
 CategoryCard.propTypes = {
-  category : PropTypes.object
+  category : PropTypes.object,
+  showMore: PropTypes.bool
 }
 
 CategoryCard.defaultProps = {
-  category : CategoryDefaultProps
+  category : CategoryDefaultProps,
+  showMore: true
 }
 
 export default CategoryCard;

@@ -44,7 +44,7 @@ const ProductCard = props => {
           </button>
           <Link 
             className="btn btn-secondary"
-            to={`product/${product?.id}`}
+            to={`/product/${product?.id}`}
             >
               View Details
           </Link>

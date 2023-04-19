@@ -19,11 +19,10 @@ ProductRequest.getAllProducts = (params) => {
   });
 };
 
-ProductRequest.getAProduct = (params) => {
+ProductRequest.getAProduct = (id) => {
   return fetch({
-    url: product,
-    method: "get",
-    params: params
+    url: `${product}/${id}`,
+    method: "get"
   });
 };
 
