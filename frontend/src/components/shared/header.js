@@ -21,7 +21,7 @@ const Header = props => {
             <li className="nav-item">
               <Link 
                 className="nav-link" 
-                to="/chat"
+                to="/cart"
               >
                 <FontAwesomeIcon icon={faShoppingCart} /> <span className="badge text-bg-secondary">{items.length ?? 0}</span>
               </Link>

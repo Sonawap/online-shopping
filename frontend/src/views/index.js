@@ -20,7 +20,7 @@ const Views = () => {
             element={<Landing title="Landing Page"/>}
           />
           <Route
-            path="/chat"
+            path="/cart"
             element={<Chat title="Your Cart"/>}
           />
           <Route
